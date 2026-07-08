@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin:  0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: #f1f1f1;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .card{
+            width: 260px;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            border-radius: 16px;
+            background: linear-gradient(160deg, #a445f2,#6c2bd9);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+        }
+        .avatar{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+        }
+        .card h1{
+            font-size: 22px;
+            margin-top: 20px;
+
+        }
+        .location{
+            font-size: 14px;
+            margin: 5px 0 15px;
+        }
+        .desc{
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .card .message{
+                background-color: white;
+                color: #6c2bd9;
+                padding: 10px 0;
+                margin-top: 15px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+        .card .message:hover{
+                opacity: 0.85;
+            }
+    </style>
+</head>
+<body>
+    <div class="card">
+    <img class="avatar" src="imge/p2.png" alt="me">
+    <h1>Songwut Kitloedphanit</h1>
+    <p class="location">Kasetsart University</p>
+    <p class="desc">Student CPE and Software Engineer</p>
+    <p class="message">Message</p>
+</div>
+    <a class="switch" href="profile.html">&larr; Back</a>
+</body>
+</html>
