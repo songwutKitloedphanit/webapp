@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ChatApp</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                min-height: 100vh;
+                padding: 60px 16px;
+                background-color: rgb(0, 170, 255);
+                font-family: Arial, sans-serif;
+            }
+            .chatApp{
+                width: 360px;
+                max-width: 100%;
+                margin:0 auto;
+                background-color: aliceblue;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+            .chatHeader{
+                height: 80px;
+                line-height: 80px;
+                text-align: center;
+                background-color: rgb(0, 68, 255);
+                color: white;
+            }
+            .chatHeader h1{
+                font-size: 48px;
+            }
+            .chatMassages{
+                min-height: 380px;
+                padding: 16px;
+                background-color: aliceblue;
+            }
+            .message{
+                position: relative;
+                clear: both;
+                max-width: 75%;
+                margin-bottom: 12px;
+                padding: 9px 12px;
+                border-radius: 12px;
+                font-size: 14px;
+                line-height: 1.4;
+                overflow-wrap: break-word;
+            }
+            .sent{
+                float: right;
+                background-color: rgb(0, 68, 255);
+                color: aliceblue;
+                border-radius: 12px 12px 0 12px;
+            }
+            .received{
+                float: left;
+                background-color: rgb(227, 227, 227);
+                color: black;
+                border-radius: 12px 12px 12px 0;
+            }
+            .chatMassages::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .chatForm{
+                padding: 12px;
+                border-top: 1px solid #ddd;
+                background-color: white;
+            }
+            .chatForm input{
+                float: left;
+                width: calc(100% - 82px);;
+                height: 40px;
+                padding: 0 14px;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                outline: none;
+            }
+            .chatForm button{
+                float: right;
+                width: 74px;;
+                height: 40px;
+                border: none;
+                border-radius: 20px;
+                background-color: rgb(0, 68, 255);
+                color: aliceblue;
+                cursor: pointer;
+            }
+            .chatForm::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <main class="chatApp">
+            <header class="chatHeader">
+                <h1>
+                    Chat App
+                </h1>
+            </header>
+            <section class="chatMassages">
+                <p class="message sent">You are my Bae❤️ :Abby</p>
+                <p class="message received">JK: ooooo🙈</p>
+                <p class="message sent">😊😊 :Abby</p>
+                <p class="message received">JK: you are my Bee</p>
+                <p class="message sent">😂😂 :Abby</p>
+                <p class="message received">JK: You got it right?</p>
+                <p class="message sent">yeah🤗 :Abby</p>
+                <p class="message received">JK: 😘😍</p>
+            </section>
+            <form class="chatForm">
+                <input
+                type="text"
+                name="message"
+                placeholder="Type a message..."
+                >
+                <button type="submit">Send</button>
+            </form>
+        </main>
+        
+    
+    </body>
+
+</html>
