@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html  lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ร้านเบเกอรี่">
+        <meta name="keywords" content="เบเกอรี่, เค้ก, ร้านขนม">
+        <title>คาเฟ่เบเกอรี่</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+<body>
+    <header>
+        <h1> 
+          คาเฟ่เบเกอรี่แสนอบอุ่น
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="/home">หน้าแรก</a></li>
+                <li><a href="/menu">เมนูขนม</a></li>
+                <li><a href="/order" aria-current="page">สั่งขนม</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form>
+        <label>รายการขนม</label>
+        <select name="cake">
+        <option value="cake">เค้กช็อกโกแลตรูปแบบที่1</option>
+        <option value="cake">เค้กช็อกโกแลตรูปแบบที่2</option>
+        <option value="cake">เค้กช็อกโกแลตรูปแบบที่3</option>
+        <option value="cake">เค้กสตอเบอรี่</option>
+        <option value="cake">เค้กอะไรสักอย่าง</option>
+        <option value="cake">คุกกี้ช็อก</option>
+        <option value="croissant">ครัวซองต์</option>
+        </select><br><br>
+
+    <label>จำนวน</label>
+    <input type="number" name="qty" min="1"><br><br>
+
+    <label>คำสั่งพิเศษ</label>
+    <textarea name="note" rows="3"></textarea><br><br>
+
+    <label>ชื่อ-นามสกุล</label>
+    <input type="text" name="fullname"><br><br>
+
+    <label>เบอร์โทร</label>
+    <input type="tel" name="phone"><br><br>
+
+    <label>ที่อยู่</label>
+    <textarea name="adress" rows="3"></textarea><br><br>
+
+    <label>วันที่และเวลาจัดส่ง</label>
+    <input type="datetime-local" name="deliver_time">
+
+    <input type="submit" value="สั่งขนม">
+    </form>
+
+</body>
+</html>
