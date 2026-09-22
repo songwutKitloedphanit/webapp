@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Word List | EX7</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="data.js" defer></script>
+        <script src="words.js" defer></script>
+    </head>
+    <body class="word-list-page">
+        <main>
+            <nav class="page-nav"><a href="../index.html">หน้ารวม EX7</a></nav>
+            <nav class="page-nav"><a href="index.html">ไปเล่นเกมเรียงคำศัพท์ →</a></nav>
+            <section class="word-editor" aria-label="รายการคำศัพท์">
+                <form id="word-form">
+                    <label class="sr-only" for="word">คำศัพท์อังกฤษ 3 ตัวอักษร</label>
+                    <input
+                        id="word"
+                        maxlength="3"
+                        required
+                        pattern="[A-Za-z]{3}"
+                        autocomplete="off"
+                        placeholder="Enter your word"
+                    />
+                    <button type="submit" class="sr-only">เพิ่มคำศัพท์</button>
+                </form>
+                <ul id="word-list"></ul>
+            </section>
+            <p class="help">
+                พิมพ์คำอังกฤษ 3 ตัวแล้วกด Enter เพื่อเพิ่มคำ กดถังขยะเพื่อลบ
+                <br />
+                ต้องมีอย่างน้อย 5 คำเพื่อเล่นเกม
+            </p>
+            <p id="message" role="status" aria-live="polite"></p>
+        </main>
+    </body>
+</html>

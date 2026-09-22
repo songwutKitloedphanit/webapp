@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vote the favorite | EX7</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="data.js" defer></script>
+        <script src="vote.js" defer></script>
+    </head>
+    <body class="">
+        <main>
+            <nav class="page-nav"><a href="../index.html">หน้ารวม EX7</a></nav>
+            <section class="vote-panel">
+                <h1>
+                    Vote the
+                    <br />
+                    favorite
+                </h1>
+                <div class="food-row">
+                    <button class="food" data-vote="0" aria-label="โหวตเบอร์เกอร์">
+                        <img src="images/burger.jpg" alt="เบอร์เกอร์" />
+                    </button>
+                    <button class="food" data-vote="1" aria-label="โหวตพิซซ่า">
+                        <img src="images/pizza.jpg" alt="พิซซ่า" />
+                    </button>
+                    <button class="food" data-vote="2" aria-label="โหวตฮอตดอก">
+                        <img src="images/hotdog.jpg" alt="ฮอตดอก" />
+                    </button>
+                </div>
+            </section>
+            <div class="vote-actions">
+                <a class="native-button" href="Showvote.htm">Show Vote</a>
+            </div>
+            <p id="message" role="status" aria-live="polite"></p>
+        </main>
+    </body>
+</html>

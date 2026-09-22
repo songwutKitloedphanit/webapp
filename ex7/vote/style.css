@@ -1,0 +1,138 @@
+﻿* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    color: #000;
+    background: #fff;
+    font-family: Arial, sans-serif;
+}
+main {
+    width: min(500px, calc(100% - 32px));
+    margin: 40px auto;
+}
+.page-nav {
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+.page-nav a {
+    color: #46616c;
+}
+.vote-panel {
+    padding: 46px 52px 32px;
+    border-radius: 48px;
+    background: linear-gradient(120deg, #59b5c9, #47a4b8);
+}
+h1 {
+    margin: 0 0 10px 62px;
+    color: white;
+    font-size: 34px;
+    line-height: 1.3;
+}
+.food-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: start;
+}
+.food {
+    display: block;
+    width: 106px;
+    height: 106px;
+    padding: 8px;
+    border: 0;
+    border-radius: 18px;
+    background: white;
+    object-fit: contain;
+}
+button.food {
+    cursor: pointer;
+}
+.food img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.food:focus-visible,
+.native-button:focus-visible {
+    outline: 3px solid #354b57;
+    outline-offset: 4px;
+}
+.food:hover {
+    box-shadow: 0 0 0 3px #fff8;
+}
+.food-result {
+    text-align: center;
+}
+.score {
+    display: block;
+    margin-top: 18px;
+    font-size: 32px;
+}
+.result-panel {
+    padding-top: 42px;
+    padding-bottom: 12px;
+}
+.result-panel h1 {
+    margin-left: 104px;
+}
+.vote-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.result-actions {
+    justify-content: space-between;
+    gap: 12px;
+}
+.native-button {
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1px solid #999;
+    border-radius: 9px;
+    color: black;
+    background: linear-gradient(#f0f0f3, #d2d2d8);
+    font:
+        27px Arial,
+        sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+#message {
+    min-height: 24px;
+    text-align: center;
+}
+.error {
+    color: #b42318;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+@media (max-width: 540px) {
+    .vote-panel {
+        padding: 30px 20px 24px;
+        border-radius: 34px;
+    }
+    h1 {
+        font-size: 28px;
+        margin-left: 32px;
+    }
+    .food-row {
+        gap: 12px;
+    }
+    .food {
+        width: clamp(65px, 23vw, 106px);
+        height: clamp(65px, 23vw, 106px);
+    }
+    .result-panel h1 {
+        margin-left: 64px;
+    }
+    .native-button {
+        font-size: 20px;
+        padding: 6px 10px;
+    }
+}

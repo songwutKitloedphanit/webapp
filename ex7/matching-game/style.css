@@ -1,0 +1,102 @@
+﻿* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: white;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+main {
+    width: min(441px, calc(100% - 32px));
+    margin: 32px auto;
+}
+.page-nav {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+a {
+    color: #425d68;
+}
+h1 {
+    font-size: 28px;
+    font-weight: normal;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px 28px;
+    padding: 7px 9px;
+    background: #fff8c6;
+}
+.tile {
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: 81 / 110;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    color: black;
+    background: #bddd8a;
+    font:
+        70px "Times New Roman",
+        serif;
+    cursor: pointer;
+    overflow: hidden;
+}
+.tile img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.tile:disabled {
+    opacity: 1;
+    cursor: default;
+}
+.tile:focus-visible {
+    outline: 3px solid #535d36;
+    outline-offset: -3px;
+}
+#reset {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    border: 0;
+    border-radius: 12px;
+    background: #7c8660;
+    color: white;
+    font:
+        42px Arial,
+        sans-serif;
+    cursor: pointer;
+}
+#reset:focus-visible {
+    outline: 3px solid #354b57;
+    outline-offset: 3px;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #4d573c;
+}
+#message,
+.help {
+    text-align: center;
+    line-height: 1.6;
+}
+.help {
+    color: #536044;
+    font-size: 14px;
+}
+@media (max-width: 450px) {
+    .board {
+        gap: 12px 20px;
+    }
+    .tile {
+        font-size: 56px;
+    }
+}

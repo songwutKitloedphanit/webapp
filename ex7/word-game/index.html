@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>เกมเรียงคำศัพท์ | EX7</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="data.js" defer></script>
+        <script src="game.js" defer></script>
+    </head>
+    <body class="">
+        <main>
+            <nav class="page-nav"><a href="../index.html">หน้ารวม EX7</a></nav>
+            <nav class="page-nav"><a href="words.html">เพิ่ม / ลบคำศัพท์</a></nav>
+            <h1>เกมเรียงคำศัพท์</h1>
+            <div class="stats">
+                <span id="round">รอบ 0 / 5</span>
+                <span id="score">คะแนน 0</span>
+                <span id="time">เวลา 20 วินาที</span>
+            </div>
+            <div id="slots" class="letters" aria-label="ช่องคำตอบ"></div>
+            <div id="letters" class="letters letter-tray" aria-label="ตัวอักษรที่เลือกได้"></div>
+            <button id="start" class="reset-button">Reset</button>
+            <button id="next" hidden>คำถัดไป</button>
+            <p id="message" role="status" aria-live="polite">กด Reset เพื่อเริ่มเล่น</p>
+            <p class="help">
+                ลากตัวอักษรลงช่อง หรือคลิกตัวอักษรเพื่อวางและนำกลับ
+                <br />
+                คำละ 20 วินาที เล่น 5 คำแล้วสรุปคะแนน
+            </p>
+        </main>
+    </body>
+</html>

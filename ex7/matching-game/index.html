@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>เกมจับคู่ | EX7</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="game.js" defer></script>
+    </head>
+    <body class="">
+        <main>
+            <nav class="page-nav"><a href="../index.html">หน้ารวม EX7</a></nav>
+            <h1>เกมจับคู่</h1>
+            <div id="board" class="board" aria-label="กระดานจับคู่"></div>
+            <button id="reset">Reset</button>
+            <div class="stats">
+                <span id="pairs">จับคู่ 0 / 8</span>
+                <span id="moves">เปิดคู่ 0 ครั้ง</span>
+            </div>
+            <p id="message" role="status" aria-live="polite"></p>
+            <p class="help">
+                เปิดภาพครั้งละ 2 ใบ คู่ผิดจะปิดหลัง 2 วินาที
+                <br />
+                คู่ถูกจะเปิดค้างไว้ จับคู่ให้ครบ 8 คู่
+            </p>
+        </main>
+    </body>
+</html>

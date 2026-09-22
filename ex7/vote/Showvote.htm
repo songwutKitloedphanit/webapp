@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vote Result | EX7</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="data.js" defer></script>
+        <script src="showvote.js" defer></script>
+    </head>
+    <body class="">
+        <main>
+            <nav class="page-nav"><a href="../index.html">หน้ารวม EX7</a></nav>
+            <section class="vote-panel result-panel">
+                <h1>
+                    Vote
+                    <br />
+                    Result
+                </h1>
+                <div class="food-row">
+                    <div class="food-result">
+                        <img class="food" src="images/burger.jpg" alt="เบอร์เกอร์" />
+                        <span class="score" id="score-0">0</span>
+                    </div>
+                    <div class="food-result">
+                        <img class="food" src="images/pizza.jpg" alt="พิซซ่า" />
+                        <span class="score" id="score-1">0</span>
+                    </div>
+                    <div class="food-result">
+                        <img class="food" src="images/hotdog.jpg" alt="ฮอตดอก" />
+                        <span class="score" id="score-2">0</span>
+                    </div>
+                </div>
+            </section>
+            <div class="vote-actions result-actions">
+                <a class="native-button" href="vote.htm">Back to Vote</a>
+                <button class="native-button" id="clear">Clear Vote</button>
+            </div>
+            <p id="total" class="sr-only"></p>
+            <p id="message" role="status" aria-live="polite"></p>
+        </main>
+    </body>
+</html>
