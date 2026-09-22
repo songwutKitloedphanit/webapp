@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <style>
+        * {
+            box-sizing: border-box; 
+        }
+        body{ 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #f3f6fa; 
+            color: #1f2937; 
+        }
+        main{ 
+            width: min(900px, calc(100% - 32px)); 
+            margin: 48px auto; 
+        }
+        h1{ 
+            margin-bottom: 8px; 
+        }
+        p{
+            color: #64748b;
+        }
+        nav{ 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 16px; 
+            margin-top: 28px; 
+        }
+        a{
+            padding: 22px;
+            border-radius: 10px; 
+            background: white; 
+            color: #1677b8; 
+            text-decoration: none; 
+            box-shadow: 0 3px 12px #00000012; 
+        }
+        a:hover{ 
+            background: #2eabe2; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Exercise 3</h1>
+        <p>Select a page from this exercise.</p>
+        <nav>
+            <a href="semantic-layout/">Semantic Layout</a>
+            <a href="calculator/">Calculator</a>
+            <a href="chat/">Chat</a>
+            <a href="float/">Float</a>
+            <a href="grid/">Grid</a>
+            <a href="facebook-post/">Facebook Post</a>
+        </nav>
+    </main>
+</body>
+</html>
