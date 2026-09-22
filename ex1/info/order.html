@@ -1,139 +1,58 @@
 <!DOCTYPE html>
-<html lang="th">
+<html  lang="th">
     <head>
-        <meta charset="UTF-8">
+        <mata charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="ร้านเบเกอรี่">
         <meta name="keywords" content="เบเกอรี่, เค้ก, ร้านขนม">
-        <title>คาเฟ่เบเกอรี่แสนอบอุ่น</title>
+        <title>คาเฟ่เบเกอรี่</title>
     </head>
-<body bgcolor="#FDF5E6" text="#3E1F00">
+<body>
     <header>
-        <table width="100%" bgcolor="#5C2D0A" cellpadding="15" border="0">
-            <tr>
-                <td align="center">
-                    <font face="Arial" size="6" color="#F5DEB3">
-                        <b>คาเฟ่เบเกอรี่</b>
-                    </font>
-                </td>
-            </tr>
-        </table>
+        <h1> 
+          คาเฟ่เบเกอรี่แสนอบอุ่น
+        </h1>
         <nav>
-            <table width="100%" bgcolor="#8B4513" cellpadding="8" border="0">
-                <tr>
-                    <td align="center">
-                        <ul>
-                            <li><a href="../index.html"><font color="#F5DEB3">หน้าแรก</font></a></li>
-                            <li><a href="menu.html"><font color="#F5DEB3">เมนูขนม</font></a></li>
-                            <li><a href="order.html"><font color="#F5DEB3">สั่งขนม</font></a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
+            <ul>
+                <li><a href="../index.html">หน้าแรก</a></li>
+                <li><a href="menu.html">เมนูขนม</a></li>
+                <li><a href="order.html">สั่งขนม</a></li>
+            </ul>
         </nav>
     </header>
 
-    <br>
+    <form>
+        <label>รายการขนม</label>
+        <select name="cake">
+        <option value="cake">เค้กช็อกโกแลตรูปแบบที่1</option>
+        <option value="cake">เค้กช็อกโกแลตรูปแบบที่2</option>
+        <option value="cake">เค้กช็อกโกแลตรูปแบบที่3</option>
+        <option value="cake">เค้กสตอเบอรี่</option>
+        <option value="cake">เค้กอะไรสักอย่าง</option>
+        <option value="cake">คุกกี้ช็อก</option>
+        <option value="croissant">ครัวซองต์</option>
+        </select><br><br>
+    </form>
 
-    <table width="55%" align="center" bgcolor="#FFFFFF" border="2" bordercolor="#D4956A" cellpadding="0" cellspacing="0">
-        <tr>
-            <td bgcolor="#FAE8CC" align="center" cellpadding="12">
-                <font face="Arial" size="5" color="#5C2D0A"><b>กรอกข้อมูลการสั่งซื้อ</b></font>
-            </td>
-        </tr>
-        <tr>
-            <td cellpadding="20">
-                <form>
-                    <table width="100%" border="0" cellpadding="8" cellspacing="0">
-                        <tr bgcolor="#FFF8EE">
-                            <td width="35%" valign="top">
-                                <font face="Arial" color="#5C2D0A"><b>รายการขนม</b></font>
-                            </td>
-                            <td>
-                                <select name="cake">
-                                    <option value="cake1">เค้กช็อกโกแลตรูปแบบที่1</option>
-                                    <option value="cake2">เค้กช็อกโกแลตรูปแบบที่2</option>
-                                    <option value="cake3">เค้กช็อกโกแลตรูปแบบที่3</option>
-                                    <option value="cake4">เค้กสตรอเบอร์รี่</option>
-                                    <option value="cake5">เค้กกำมะหยี่แดง</option>
-                                    <option value="cookie">คุกกี้ช็อก</option>
-                                    <option value="croissant">ครัวซองต์</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td valign="top">
-                                <font face="Arial" color="#5C2D0A"><b>จำนวน</b></font>
-                            </td>
-                            <td>
-                                <input type="number" name="qty" min="1" size="5">
-                            </td>
-                        </tr>
-                        <tr bgcolor="#FFF8EE">
-                            <td valign="top">
-                                <font face="Arial" color="#5C2D0A"><b>คำสั่งพิเศษ</b></font>
-                            </td>
-                            <td>
-                                <textarea name="note" rows="3" cols="30"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td valign="top">
-                                <font face="Arial" color="#5C2D0A"><b>ชื่อ-นามสกุล</b></font>
-                            </td>
-                            <td>
-                                <input type="text" name="fullname" size="28">
-                            </td>
-                        </tr>
-                        <tr bgcolor="#FFF8EE">
-                            <td valign="top">
-                                <font face="Arial" color="#5C2D0A"><b>เบอร์โทร</b></font>
-                            </td>
-                            <td>
-                                <input type="tel" name="phone" size="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td valign="top">
-                                <font face="Arial" color="#5C2D0A"><b>ที่อยู่</b></font>
-                            </td>
-                            <td>
-                                <textarea name="adress" rows="3" cols="30"></textarea>
-                            </td>
-                        </tr>
-                        <tr bgcolor="#FFF8EE">
-                            <td valign="top">
-                                <font face="Arial" color="#5C2D0A"><b>วันที่และเวลาจัดส่ง</b></font>
-                            </td>
-                            <td>
-                                <input type="datetime-local" name="deliver_time">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center" bgcolor="#FAE8CC" cellpadding="12">
-                                <input type="submit" value="  สั่งขนม  ">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </td>
-        </tr>
-    </table>
+    <label>จำนวน</label>
+    <input type="number" name="qty" min="1"><br><br>
 
-    <br>
-    <hr color="#8B4513" size="2" width="90%">
+    <label>คำสั่งพิเศษ</label>
+    <textarea name="note" rows="3"></textarea><br><br>
 
-    <footer>
-        <table width="100%" bgcolor="#5C2D0A" cellpadding="12" border="0">
-            <tr>
-                <td align="center">
-                    <font face="Arial" size="2" color="#F5DEB3">
-                        &copy; ทรงวุฒิ กิจเลิศพาณิช &nbsp;|&nbsp; 6620501362
-                    </font>
-                </td>
-            </tr>
-        </table>
-    </footer>
+    <label>ชื่อ-นามสกุล</label>
+    <input type="text" name="fullname"><br><br>
+
+    <label>เบอร์โทร</label>
+    <input type="tel" name="phone"><br><br>
+
+    <label>ที่อยู่</label>
+    <textarea name="adress" rows="3"></textarea><br><br>
+
+    <label>วันที่และเวลาจัดส่ง</label>
+    <input type="datetime-local" name="=deliver_time"
+
+    <input type="submit" value="สั่งขนม"
 
 </body>
 </html>
