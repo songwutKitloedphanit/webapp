@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+            *{
+            margin:  0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom left, #d7f3e4, #9ce6b5);
+            color: #163b2a;
+            font-family: Arial, sans-serif;
+        }
+        .calculator{
+            width: 370px;
+            max-width: 100%;
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid rgba(22, 59, 42, 0.12);
+            background: linear-gradient(to bottom left, #cff4e7, #baeecc);
+            box-shadow: 0 10px 25px rgba(22, 59, 42, 0.16);
+        }
+        .home-link{
+            display: inline-block;
+            margin-bottom: 18px;
+            color: #15803d;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .home-link:hover{
+            text-decoration: underline;
+        }
+        .home-link:focus-visible,
+        button:focus-visible{
+            outline: 3px solid #f59e0b;
+            outline-offset: 3px;
+        }
+        h1{
+            margin: 0 0 20px;
+            color: #163b2a;
+            font-size: 28px;
+            text-align: center;
+        }
+        .display{
+            display: block;
+            width: 100%;
+            min-height: 80px;
+            margin-bottom: 22px;
+            padding: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background-color: #cff4e7;
+            color: #222;
+            font-size: 34px;
+            font-weight: bold;
+            text-align: right;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .buttons button{
+            height: 64px;
+            border: none;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+            transition: filter 0.2s ease, transform 0.2s ease;
+        }
+        .operator{
+            background-color: #fed7aa;
+            color: #9a3412 !important;
+        }
+        .number{
+            background-color: #dbeafe;
+            color: #1e3a8a !important;
+        }
+        .clear{
+            background-color: #fca5a5;
+            color: #7f1d1d !important;
+        }
+        .equal{
+            grid-column: span 2;
+            background-color: #22c55e;
+            color: #12351f !important;
+        }
+        .buttons button:hover{
+            filter: brightness(0.95);
+        }
+        .buttons button:active{
+            transform: translateY(2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <main class="calculator">
+            <a class="home-link" href="../index.html">← All Exercises</a>
+            <h1>Calculator</h1>
+            <output class="display" aria-live="polite">0</output>
+            <section class="buttons">
+                <button class="operator" data-operator="+">+</button>
+                <button class="operator" data-operator="-">-</button>
+                <button class="operator" data-operator="*">&times;</button>
+                <button class="operator" data-operator="/">&divide;</button>
+
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+
+                <button class="number">0</button>
+                <button class="number">.</button>
+                <button class="clear">C</button>
+
+                <button class="equal">=</button>
+            </section>
+        </main>
+
+        <script>
+            const display = document.querySelector(".display");
+            const buttons = document.querySelectorAll(".buttons button");
+
+            let currentValue = "";
+            let storedValue = null;
+            let pendingOperator = null;
+            let hasResult = false;
+
+            function render(value) {
+                display.textContent = value || "0";
+            }
+
+            function resetCalculator() {
+                currentValue = "";
+                storedValue = null;
+                pendingOperator = null;
+                hasResult = false;
+                render("0");
+            }
+
+            function showError() {
+                currentValue = "";
+                storedValue = null;
+                pendingOperator = null;
+                hasResult = true;
+                render("Error");
+            }
+
+            function calculate(left, operator, right) {
+                let result;
+
+                if (operator === "+") result = left + right;
+                if (operator === "-") result = left - right;
+                if (operator === "*") result = left * right;
+                if (operator === "/") {
+                    if (right === 0) return null;
+                    result = left / right;
+                }
+
+                if (!Number.isFinite(result)) return null;
+                return Number(result.toFixed(10));
+            }
+
+            function inputNumber(value) {
+                if (hasResult) {
+                    currentValue = "";
+                    hasResult = false;
+                }
+
+                if (value === "." && currentValue.includes(".")) return;
+                if (currentValue === "0" && value !== ".") currentValue = "";
+
+                currentValue += value;
+                render(currentValue);
+            }
+
+            function inputOperator(operator) {
+                if (currentValue === "" && storedValue !== null) {
+                    pendingOperator = operator;
+                    return;
+                }
+
+                if (currentValue === "") return;
+
+                const value = Number(currentValue);
+
+                if (storedValue === null) {
+                    storedValue = value;
+                } else if (pendingOperator !== null) {
+                    const result = calculate(storedValue, pendingOperator, value);
+
+                    if (result === null) {
+                        showError();
+                        return;
+                    }
+
+                    storedValue = result;
+                    render(result);
+                }
+
+                pendingOperator = operator;
+                currentValue = "";
+                hasResult = false;
+            }
+
+            function inputEquals() {
+                if (storedValue === null || pendingOperator === null || currentValue === "") return;
+
+                const result = calculate(storedValue, pendingOperator, Number(currentValue));
+
+                if (result === null) {
+                    showError();
+                    return;
+                }
+
+                render(result);
+                currentValue = String(result);
+                storedValue = null;
+                pendingOperator = null;
+                hasResult = true;
+            }
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const value = button.textContent.trim();
+
+                    if (button.classList.contains("number")) inputNumber(value);
+                    if (button.classList.contains("operator")) {
+                        inputOperator(button.dataset.operator);
+                    }
+                    if (button.classList.contains("equal")) inputEquals();
+                    if (button.classList.contains("clear")) resetCalculator();
+                });
+            });
+        </script>
+    </body>
+
+</html>

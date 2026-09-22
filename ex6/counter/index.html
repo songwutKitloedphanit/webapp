@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Counter</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 24px;
+                background: linear-gradient(to bottom left, #d7f3e4, #9ce6b5);
+                color: #163b2a;
+                font-family: Arial, sans-serif;
+            }
+
+            main {
+                width: min(100%, 420px);
+                padding: 32px;
+                border-radius: 16px;
+                border: 1px solid rgba(22, 59, 42, 0.12);
+                background: linear-gradient(to bottom left, #cff4e7, #baeecc);
+                box-shadow: 0 10px 25px rgba(22, 59, 42, 0.16);
+                text-align: center;
+            }
+
+            .home-link {
+                display: inline-block;
+                margin-bottom: 18px;
+                color: #15803d;
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            .home-link:hover {
+                text-decoration: underline;
+            }
+
+            .home-link:focus-visible,
+            button:focus-visible {
+                outline: 3px solid #f59e0b;
+                outline-offset: 3px;
+            }
+
+            h1 {
+                margin: 0 0 24px;
+            }
+
+            #count-value {
+                margin-bottom: 24px;
+                color: #111827;
+                font-size: 64px;
+                font-weight: bold;
+                line-height: 1;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            button {
+                padding: 12px 18px;
+                border: none;
+                border-radius: 8px;
+                color: #12351f;
+                font-size: 16px;
+                cursor: pointer;
+                transition: filter 0.2s ease, transform 0.2s ease;
+            }
+
+            .decrease-button {
+                background: #fecaca;
+                color: #991b1b;
+            }
+
+            .reset-button {
+                background: #dbeafe;
+                color: #1e3a8a;
+            }
+
+            .increase-button {
+                background: #86efac;
+            }
+
+            button:hover {
+                filter: brightness(0.92);
+            }
+
+            button:active {
+                transform: translateY(1px);
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <a class="home-link" href="../index.html">← All Exercises</a>
+            <h1>Counter</h1>
+            <p id="count-value" aria-live="polite">0</p>
+
+            <div class="buttons">
+                <button class="decrease-button" id="decrease-button" type="button">Decrease</button>
+                <button class="reset-button" id="reset-button" type="button">Reset</button>
+                <button class="increase-button" id="increase-button" type="button">Increase</button>
+            </div>
+        </main>
+
+        <script>
+            const countValue = document.querySelector("#count-value");
+            const decreaseButton = document.querySelector("#decrease-button");
+            const resetButton = document.querySelector("#reset-button");
+            const increaseButton = document.querySelector("#increase-button");
+
+            let count = 0;
+
+            function renderCounter() {
+                countValue.textContent = count;
+
+                if (count > 0) {
+                    countValue.style.color = "#15803d";
+                } else if (count < 0) {
+                    countValue.style.color = "#dc2626";
+                } else {
+                    countValue.style.color = "#111827";
+                }
+            }
+
+            decreaseButton.addEventListener("click", () => {
+                count -= 1;
+                renderCounter();
+            });
+
+            resetButton.addEventListener("click", () => {
+                count = 0;
+                renderCounter();
+            });
+
+            increaseButton.addEventListener("click", () => {
+                count += 1;
+                renderCounter();
+            });
+
+            renderCounter();
+        </script>
+    </body>
+</html>

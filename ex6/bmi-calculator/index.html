@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BMI Calculator</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 24px;
+                background: linear-gradient(to bottom left, #d7f3e4, #9ce6b5);
+                color: #163b2a;
+                font-family: Arial, sans-serif;
+            }
+
+            main {
+                width: min(100%, 720px);
+                padding: 28px;
+                border: 1px solid rgba(22, 59, 42, 0.12);
+                border-radius: 16px;
+                background: linear-gradient(to bottom left, #cff4e7, #baeecc);
+                box-shadow: 0 10px 25px rgba(22, 59, 42, 0.16);
+            }
+
+            .home-link {
+                display: inline-block;
+                margin-bottom: 18px;
+                color: #15803d;
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            .home-link:hover {
+                text-decoration: underline;
+            }
+
+            .home-link:focus-visible,
+            button:focus-visible,
+            input:focus-visible {
+                outline: 3px solid #f59e0b;
+                outline-offset: 3px;
+            }
+
+            h1 {
+                margin: 0 0 24px;
+                text-align: center;
+            }
+
+            form {
+                display: grid;
+                gap: 10px;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #c7d8ce;
+                border-radius: 8px;
+                background: #d0ffe0;
+                color: #163b2a;
+                font-size: 16px;
+            }
+
+            button {
+                margin-top: 10px;
+                padding: 12px;
+                border: none;
+                border-radius: 8px;
+                background: #90ee90;
+                color: #12351f;
+                font-size: 16px;
+                cursor: pointer;
+                transition: filter 0.2s ease, transform 0.2s ease;
+            }
+
+            button:hover {
+                background: #76db76;
+            }
+
+            button:active {
+                transform: translateY(1px);
+            }
+
+            #result {
+                margin-top: 24px;
+            }
+
+            #result h2 {
+                margin: 0 0 12px;
+                font-size: 20px;
+            }
+
+            #result p {
+                display: flex;
+                justify-content: space-between;
+                gap: 16px;
+                margin: 10px 0 0;
+                padding: 14px 16px;
+                border: 1px solid #b7e6d2;
+                border-radius: 10px;
+                background: #cff4e7;
+            }
+
+            #result strong {
+                color: #15803d;
+                text-align: right;
+            }
+
+
+        </style>
+    </head>
+
+       
+    <body>
+        <main>
+            <a class="home-link" href="../index.html">← All Exercises</a>
+            <h1>Body Mass Index (BMI) Calculator</h1>
+
+            <form id="bmi-form">
+                <label for="height">Your Height (cm)</label>
+                <input id="height" type="number" min="0.1" step="any" required>
+
+                <label for="weight">Your Weight (kg)</label>
+                <input id="weight" type="number" min="0.1" step="any" required>
+
+                <button type="submit">Compute BMI</button>
+            </form>
+
+            <section id="result" aria-live="polite">
+                <h2>Result</h2>
+                <p>
+                    <span>BMI</span>
+                    <strong id="bmi-value">-</strong>
+                </p>
+                <p>
+                    <span>Weight Condition</span>
+                    <strong id="bmi-condition">-</strong>
+                </p>
+
+            </section>
+        </main>
+
+ <script>
+        const form =document.querySelector("#bmi-form");
+        const weightInput =document.querySelector("#weight");
+        const heightInput =document.querySelector("#height");
+        const bmiValue =document.querySelector("#bmi-value");
+        const bmiCondition =document.querySelector("#bmi-condition");
+
+        form.addEventListener("submit" ,(event)=>{
+            event.preventDefault();
+        
+
+        const weight = Number(weightInput.value);
+        const heightCm = Number(heightInput.value);
+
+        if(!Number.isFinite(weight) || !Number.isFinite(heightCm) || weight <= 0 || heightCm <= 0){
+            bmiValue.textContent="-";
+            bmiCondition.textContent="Please enter valid values";
+            return;
+        }
+
+        const heightM = heightCm/100;
+        const bmi = weight/(heightM*heightM);
+
+        bmiValue.textContent=bmi.toFixed(2);
+
+        if(bmi<18.5){
+            bmiCondition.textContent = "Underweight"
+        }else if(bmi<25){
+            bmiCondition.textContent = "Normal"
+        }else if(bmi<30){
+            bmiCondition.textContent = "Overweight"
+        }else{
+            bmiCondition.textContent = "Obese"
+        }
+    });
+
+    </script>
+
+    </body>
+
+
+    
+
+</html>
