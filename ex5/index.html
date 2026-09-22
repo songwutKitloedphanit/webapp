@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript To Do</title>
+
+        <style>
+            body {
+                max-width: 800px;
+                margin: 30px auto;
+                padding: 0 16px;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>JavaScript To Do</h1>
+
+        <section>
+            <h2>1. เปลี่ยนสีและข้อความเมื่อกดปุ่ม</h2>
+
+            <button id="changeButton">กดเพื่อเปลี่ยนสี</button>
+            <p id="buttonStatus">ยังไม่ได้กดปุ่ม</p>
+        </section>
+
+        <section>
+            <h2>2. แสดงข้อความและสีตามที่กำหนด</h2>
+
+            <form id="displayForm">
+                <input
+                    id="displayTextInput"
+                    type="text"
+                    placeholder="ใส่ข้อความ"
+                    required
+                >
+
+                <input
+                    id="displayColorInput"
+                    type="color9
+                    value="#2563eb"
+                >
+
+                <button type="submit">แสดงผล</button>
+            </form>
+
+            <p id="displayResult">ผลลัพธ์จะแสดงตรงนี้</p>
+        </section>
+
+        <section>
+            <h2>3. เพิ่มและลดตัวเลข</h2>
+
+            <button id="decreaseButton">ลด</button>
+            <span id="counterValue">0</span>
+            <button id="increaseButton">เพิ่ม</button>
+        </section>
+
+        <section>
+            <h2>4. เพิ่มข้อความจาก input</h2>
+
+            <form id="messageForm">
+                <input
+                    id="newMessageInput"
+                    type="text"
+                    placeholder="ใส่ข้อความใหม่"
+                >
+
+                <button type="submit">เพิ่มข้อความ</button>
+            </form>
+
+            <p id="messageStatus"></p>
+            <ul id="messageList"></ul>
+        </section>
+
+        <section>
+            <h2>5. Next และ previous</h2>
+
+            <button id="previousButton">previous</button>
+            <span id="messagePosition">0 / 0</span>
+            <button id="nextButton">Next</button>
+
+            <p id="currentMessage">ยังไม่มีข้อความ</p>
+        </section>
+
+        <section>
+            <h2>6. แสดงข้อมูลจาก object</h2>
+
+            <select id="carSelect">
+                <option value="Ford">Ford</option>
+                <option value="BMW">BMW</option>
+                <option value="Fiat">Fiat</option>
+            </select>
+
+            <pre id="objectResult"></pre>
+        </section>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
