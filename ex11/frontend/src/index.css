@@ -1,0 +1,39 @@
+:root {
+  font-family: Arial, Tahoma, sans-serif;
+  color: #222;
+  background-color: white;
+  color-scheme: light;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: #1659a5;
+}
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 20px;
+}
+h1,
+h2,
+p {
+  margin: 0 0 12px;
+}
+:focus-visible {
+  outline: 2px solid #1659a5;
+  outline-offset: 3px;
+}
